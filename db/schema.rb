@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_08_015552) do
+ActiveRecord::Schema.define(version: 2019_03_08_101357) do
+
+  create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "menu"
+    t.integer "quantity"
+    t.integer "start_year"
+    t.integer "start_month"
+    t.string "start_day"
+    t.integer "end_year"
+    t.integer "end_month"
+    t.string "end_day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -20,6 +33,10 @@ ActiveRecord::Schema.define(version: 2019_03_08_015552) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "name"
+    t.string "stage_title"
+    t.string "tel"
+    t.string "address"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
