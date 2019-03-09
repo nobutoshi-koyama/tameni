@@ -29,13 +29,15 @@
     <% if user_signed_in? %>
     <!-- Dropdown Structure -->
    <ul id="dropdown1" class="dropdown-content">
-     <li><a href="#!">出荷予定</br>（登録）</a></li>
+     <li><a href="/tweets/new">出荷予定</br>（登録）</a></li>
      <li class="divider"></li>
      <li><a href="#!">出荷予定</br>（確定）</a></li>
      <li class="divider"></li>
      <li><a href="#!">出荷履歴</a></li>
      <li class="divider"></li>
      <li><%= link_to "登録情報", user_path(current_user), method: :get %></li>
+     <li class="divider"></li>
+     <li><%= link_to "登録情報（編集）", edit_user_path(current_user), method: :get %></li>
    </ul>
    
    <nav class="blue darken-3">

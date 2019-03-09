@@ -1,14 +1,15 @@
 <div class="row form user_profole">
     <!--<div class="blue darken-3">-->
+        <div class="image" style="content: url(<%= rails_blob_path(@user.image) %>) "></div>
         <p>名前</p>
         <h2><%= "#{@user.name}" %></h2>
         <p>屋号</p>
         <h2><%= "#{@user.stage_title}" %></h2>
-        <p>住所（市町村）</p>
+        <p>営農地（市町村）</p>
         <h2><%= "#{@user.address}" %></h2>
         <p>TEL</p>
         <h2><%= "#{@user.tel}" %></h2>
-        <p>e-mail</p>
+        <p>mail</p>
         <h2><%= "#{@user.email}" %></h2>
         
         
