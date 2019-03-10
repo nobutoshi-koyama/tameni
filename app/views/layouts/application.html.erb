@@ -31,7 +31,7 @@
    <ul id="dropdown1" class="dropdown-content">
      <li><a href="/tweets/new">出荷予定</br>（登録）</a></li>
      <li class="divider"></li>
-     <li><a href="/tweets/show">出荷予定</br>（確定）</a></li>
+     <li><a href="">出荷予定</br>（確定）</a></li>
      <li class="divider"></li>
      <li><a href="#!">出荷履歴</a></li>
      <li class="divider"></li>
@@ -44,7 +44,10 @@
      <div class="nav-wrapper">
        <a href="/" class="brand-logo">tameni</a>
        <ul class="right hide-on-med-and-down">
-         <li><a href="sass.html">出荷規格</a></li>
+           <% if current_user.id == 1 %>
+         <li><a href="/admins/new">出荷規格（投稿）</a></li>
+         <% end %>
+         <li><a href="/admins/show">出荷規格</a></li>
          <li><a href="badges.html">お問い合わせ</a></li>
          
          <!-- Dropdown Trigger -->

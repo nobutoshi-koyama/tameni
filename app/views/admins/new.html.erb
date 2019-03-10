@@ -1,0 +1,18 @@
+<div class="content2">
+     <% @admin = Admin.new unless @admin %>
+      
+      <%= form_for(@admin) do |f| %>
+      <div class="form-group file">
+        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+      </div>
+      <%= f.label :menu %>
+      <%= f.text_field :menu %>
+      
+      <%= f.label :detail %>
+      <%= f.text_field :detail %>
+      
+      <div class="form-group">
+        <%= f.submit "送信", class: "btn btn-primary withripple" %>
+      </div>
+      <% end %>
+</div>
