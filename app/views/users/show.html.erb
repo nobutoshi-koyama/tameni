@@ -11,7 +11,7 @@
         <h2><%= "#{@user.tel}" %></h2>
         <p>mail</p>
         <h2><%= "#{@user.email}" %></h2>
-        
+</div>
         <div class="content1">
             <p><%= @user.name %>さんの出荷予定(未確定)</p>
              <table>
@@ -26,15 +26,13 @@
   
    <% @tweets.each do |tweet| %>
       <%= render partial: "tweets/tweet", locals: { tweet: tweet} %>
-      
    <% end %>
    
-   
+  
    
     
     </table>
     
 </div>
-        <%= paginate(@tweets) %>
-    <!--</div>-->
-</div>
+         <%= paginate(@tweets) %>
+    
