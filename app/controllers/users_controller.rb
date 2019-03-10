@@ -2,6 +2,7 @@ class UsersController < ApplicationController
     
     def show
         @user = User.find(params[:id])
+        @tweets = Tweet.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at ASC")
     end
     
     def edit

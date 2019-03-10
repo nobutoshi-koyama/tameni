@@ -1,0 +1,14 @@
+<div class="content1">
+  <% if user_signed_in? %>
+   <% @tweets.each do |tweet| %>
+      <%= render partial: "tweet", locals: { tweet: tweet} %>
+   <% end %>
+   
+   <%= paginate(@tweets) %>
+   
+    <% else %>
+    <p>ログインしてください</p>
+    <% end %>
+    
+    
+</div>
