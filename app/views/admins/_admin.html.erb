@@ -3,7 +3,11 @@
     <tr>
       <td><%= admin.menu %></td>
       <td><%= admin.detail %></td>
-      <td></td>
+      <td>
+          <% if admin.image.attached? %>
+            <%= image_tag admin.image %>
+          <% end %>
+      </td>
       </tr>
       </tbody>
         
