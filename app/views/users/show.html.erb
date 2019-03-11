@@ -1,7 +1,15 @@
 <div class="row form user_profole">
     <!--<div class="blue darken-3">-->
-　　　　
+　　　　<% if @user.image.attached? %>
         <div class="image" style="content: url(<%= rails_blob_path(@user.image) %>) "></div>
+        <% else %>
+        <%= form_for current_user do |f| %>
+         <h2>プロフィール画像</h2>
+        <div class="form-group file">
+        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+      </div>
+        <% end %>
+        <% end %>
        
         <p>名前</p>
         <h2><%= "#{@user.name}" %></h2>
