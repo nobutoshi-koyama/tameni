@@ -1,7 +1,22 @@
-<div class="content4">
-     <% @admins.each do |admin| %>
-     <p><%= admin.menu %></p>
-     <p><%= admin.detail %></p>
-     <% end %>
-        
-</div>
+
+ <div class="content4">
+            <p>出荷規格</p>
+             <table>
+        <thead>
+          <tr>
+              <th>品目</th>
+              <th>荷姿</th>
+              
+          </tr>
+        </thead>
+  
+   <% @admins.each do |admin| %>
+      <%= render partial: "admins/admin", locals: { admin: admin} %>
+   <% end %>
+   
+  
+   
+    
+    </table>
+    
+   </div>
