@@ -26,10 +26,7 @@
 
   <body>
       
-      <!--フラッシュメッセージ-->
-      <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-      <% end %>
+      
     
     <% if user_signed_in? %>
     <!-- Dropdown Structure -->
@@ -74,6 +71,11 @@
        </ul>
      </div>
    </nav>
+   
+   <!--フラッシュメッセージ-->
+      <% flash.each do |key, value| %>
+      <%= content_tag(:div, value, class: "#{key}") %>
+      <% end %>
    
     <%= yield %>
   </body>
