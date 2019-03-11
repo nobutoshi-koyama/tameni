@@ -26,6 +26,16 @@ class TweetsController < ApplicationController
      tweet.destroy if tweet.user_id == current_user.id
     end
     
+    def edit
+        @tweet = Tweet.find(params[:id])
+    end
+    
+    def update
+        tweet = Tweet.find(params[:id])
+        tweet.update(tweet_params) if tweet.user_id == current_user.id
+    end
+    
+    
     private
     def tweet_params
         params.permit(:start_year, :end_year, :start_month, :end_month, :start_day, :end_day, :quantity, :menu)

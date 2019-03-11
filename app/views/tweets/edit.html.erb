@@ -1,0 +1,18 @@
+<div class="contents row">
+    <%= form_tag("/tweets/#{@tweet.id}", method: :patch) do  %>
+  
+    <h3>
+      編集する
+    </h3>
+    <input type="string" name="menu" value="<%= @tweet.menu %>" placeholder="品目">
+          <input type="integer" name="quantity" value="<%= @tweet.quantity %>" placeholder="数量(pc)"><p>(pc)</p>
+          <input type="integer" name="start_year" value="<%= @tweet.start_year %>" placeholder="年"><p>年</p>
+          <input type="integer" name="start_month" value="<%= @tweet.start_month %>"placeholder="月"><p>月</p>
+          <input type="string" name="start_day" value="<%= @tweet.start_day %>" placeholder="旬"><p>から</p>
+          <input type="integer" name="end_year" value="<%= @tweet.end_year %>" placeholder="年"><p>年</p>
+          <input type="integer" name="end_month" value="<%= @tweet.end_month %>" placeholder="月"><p>月</p>
+          <input type="string" name="end_day" value="<%= @tweet.end_day %>" placeholder="旬"><p>まで</p>
+    
+    <input type="submit" value="SENT">
+  <% end %>
+</div>
