@@ -1,0 +1,17 @@
+
+
+<p>検索</p>
+<%= form_tag(search_tweets_path,:method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag 'Search', :name => nil %>
+<% end %>
+
+<ul><% @tweets.each do |tweet| %>
+  <li>
+    <%= link_to tweet.menu, tweet %>
+    <%= tweet.created_at %>
+   
+  </li>
+  
+  <% end %>
+</ul>
