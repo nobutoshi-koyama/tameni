@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
     end
     
     def create
-    Admin.create(menu: params_admin[:menu], detail: params_admin[:detail])
+    Admin.create(menu: params_admin[:menu], detail: params_admin[:detail], user_id: current_user.id)
     end
     
     def show

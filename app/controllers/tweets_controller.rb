@@ -1,7 +1,8 @@
 class TweetsController < ApplicationController
     
     def index 
-        # @tweets = Tweet.all
+        # フラッシュメッセージ
+        flash[:notice] = "ようこそ。本日は#{Date.today}です。"
     end
     
     def show
