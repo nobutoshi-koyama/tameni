@@ -6,7 +6,7 @@ class AdminsController < ApplicationController
     Admin.create(menu: params_admin[:menu], detail: params_admin[:detail], user_id: current_user.id)
     end
     
-    def show
+    def index
      @admins = Admin.all
  end
     
