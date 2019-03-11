@@ -20,6 +20,25 @@
     <%= f.label :パスワード（確認） %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
   </div>
+  
+  <div class="field">
+    <%= f.label :名前 %><br />
+    <%= f.text_field :name, autocomplete: "name" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :屋号 %><br />
+    <%= f.text_field :stage_title, autocomplete: "stage_title" %>
+    
+    <div class="field">
+    <%= f.label :tel %><br />
+    <%= f.text_field :tel, autocomplete: "tel" %>
+    
+    <div class="field">
+    <%= f.label :市町村 %><br />
+    <%= f.text_field :address, autocomplete: "address" %>
+    
+    
 
   <div class="actions">
     <%= f.submit "登録" %>

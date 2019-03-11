@@ -17,13 +17,12 @@ class TweetsController < ApplicationController
     
     def create
         Tweet.create(start_year: tweet_params[:start_year], end_year: tweet_params[:end_year], start_month: tweet_params[:start_month], end_month: tweet_params[:end_month], start_day: tweet_params[:start_day], end_day: tweet_params[:end_day], quantity: tweet_params[:quantity], menu: tweet_params[:menu], user_id: current_user.id)
-        if tweet_params[:menu].present? && tweet_params[:quantity].present? && tweet_params[:start_year].present? && tweet_params[:start_month].present? && tweet_params[:start_day].present? && tweet_params[:end_year].present? && tweet_params[:end_month].present? && tweet_params[:end_day].present?
-        flash.now[:notice] = "登録完了"
-    else
-        flash[:notice] = "すべての項目を入力してください"
-        redirect_to action: :new
-        
-    end
+          if tweet_params[:menu].present? && tweet_params[:quantity].present? && tweet_params[:start_year].present? && tweet_params[:start_month].present? && tweet_params[:start_day].present? && tweet_params[:end_year].present? && tweet_params[:end_month].present? && tweet_params[:end_day].present?
+              flash.now[:notice] = "登録完了"
+          else
+              flash[:notice] = "すべての項目を入力してください"
+              redirect_to action: :new
+          end
     end
     
     def destroy
