@@ -39,15 +39,15 @@ class TweetsController < ApplicationController
         tweet.update(tweet_params) if tweet.user_id == current_user.id
     end
     
-     def search
-    #Viewのformで取得したパラメータをモデルに渡す
-    @tweets = Tweet.search(params[:search])
-  end
+    def search
+        #Viewのformで取得したパラメータをモデルに渡す
+         @tweets = Tweet.search(params[:search])
+    end
     
     
     private
     def tweet_params
-        params.permit(:start_year, :end_year, :start_month, :end_month, :start_day, :end_day, :quantity, :menu)
+        params.require(:tweet).permit(:start_year, :end_year, :start_month, :end_month, :start_day, :end_day, :quantity, :menu)
     
     end
 end

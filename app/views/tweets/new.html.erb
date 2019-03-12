@@ -1,25 +1,45 @@
-<div class="row">
+<div class="content5">
   
-  <%= form_tag('/tweets', class: "col s12", method: :post) do %>
+  <% @tweet = Tweet.new unless @tweet %>
+  <%= form_for(@tweet) do |f| %>
+  
     
       <div class="row">
-        <div class="input-field col s12">
+        <!--<div class="input-field col s12">-->
           
-          <input type="string" name="menu" placeholder="品目">
-          <input type="integer" name="quantity" placeholder="数量(pc)"><p>(pc)</p>
-          <input type="integer" name="start_year" placeholder="年"><p>年</p>
-          <input type="integer" name="start_month" placeholder="月"><p>月</p>
-          <input type="string" name="start_day" placeholder="旬"><p>から</p>
-          <input type="integer" name="end_year" placeholder="年"><p>年</p>
-          <input type="integer" name="end_month" placeholder="月"><p>月</p>
-          <input type="string" name="end_day" placeholder="旬"><p>まで</p>
+          <%= f.label :menu %>
+          <%= f.text_field :menu, placeholder:"品目"%>
+          
+          <%= f.label :quantity %>
+          <%= f.text_field :quantity %>
+          
+          <%= f.label :start_year %>
+          <%= f.text_field :start_year %>
+          
+          <%= f.label :start_month %>
+          <%= f.text_field :start_month %>
+          
+          <%= f.label :start_day %>
+          <%= f.text_field :start_day %>
+          
+          <%= f.label :end_year %>
+          <%= f.text_field :end_year %>
+          
+          <%= f.label :end_month %>
+          <%= f.text_field :end_month %>
+          
+          <%= f.label :end_day %>
+          <%= f.text_field :end_day %>
           
           
           
-          <input type="submit" value="投稿する" class="btn">
+          <div class="form-group">
+          <%= f.submit "送信", class: "btn btn-primary withripple" %>
+          </div>
+          
           <% end %>
         </div>
-      </div>
+      <!--</div>-->
      
   </div>
   
