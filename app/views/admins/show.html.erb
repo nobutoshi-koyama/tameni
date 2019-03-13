@@ -1,0 +1,16 @@
+<div class="content_admin">
+     
+    
+      <%= @admin.menu %>
+      <%= @admin.detail %>
+      
+        <div class="admin_image"></div>
+          <% if @admin.image.attached? %>
+            <%= image_tag @admin.image %>
+          <% end %>
+          
+        
+         <%= link_to'出荷規格一覧', "/admins",  class: "waves-effect waves-light btn" %>
+      
+        
+</div>

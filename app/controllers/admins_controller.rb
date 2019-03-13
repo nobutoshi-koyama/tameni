@@ -1,4 +1,7 @@
 class AdminsController < ApplicationController
+    
+    before_action :authenticate_user!, :except =>[:index]
+    
     def new
     end
     
@@ -10,6 +13,20 @@ class AdminsController < ApplicationController
     def index
      @admins = Admin.all
  end
+ 
+    def show
+    @admin = Admin.find(params[:id])
+end
+
+    def edit
+        @admin = Admin.find(params[:id])
+    end
+    
+    def update
+        admin = Admin.find(params[:id])
+        admin.update(params_admin) if current_user.id == 1
+    end
+    
     
     private
     def params_admin

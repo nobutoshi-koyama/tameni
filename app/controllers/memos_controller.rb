@@ -1,4 +1,5 @@
 class MemosController < ApplicationController
+    before_action :authenticate_user!, :except =>[:index]
     
     def index
         
@@ -7,13 +8,11 @@ class MemosController < ApplicationController
         flash.now[:notice] = "ようこそ。本日は#{Date.today}です。"
         end
         
-        @memos = Memo.all.page(params[:page]).per(5).order("created_at DESC")
+        @memos = Memo.where(user_id: 1).page(params[:page]).per(5).order("created_at DESC")
         
         
-        # topの表示はそのユーザーと管理者が投稿したもののみにしたい
-        # if current_user.id == 1
-        #     @memos = Memo.all
-        # end
+        
+       
     end
     
     def new

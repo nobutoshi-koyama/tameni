@@ -3,7 +3,9 @@
        <% @memos.each do |memo| %>
          <%= render partial: "memo", locals: { memo: memo} %>
        <% end %>
-     <% end %>
+    
   
   <%= paginate(@memos) %>
+  
+   <% end %>
 </div>

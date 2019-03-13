@@ -1,5 +1,7 @@
 class TweetsController < ApplicationController
     
+    before_action :authenticate_user!, :except =>[:index]
+    
     def index 
         
         
@@ -10,9 +12,9 @@ class TweetsController < ApplicationController
         
     end
     
-    def show
-     @tweet = Tweet.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at ASC")
-    end
+    # def show
+    #  @tweet = Tweet.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at ASC")
+    # end
     
     def new
         # @tweet = Tweet.new

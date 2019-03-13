@@ -10,6 +10,15 @@
           <% end %>
           </div>
       </td>
+      <td>
+        
+         <%= link_to'詳細', "/admins/#{admin.id}",  class: "waves-effect waves-light btn" %>
+      </td>
+      <% if current_user.id == 1 %>
+      <td>
+        <%= link_to'編集', "/admins/#{admin.id}/edit", method: :get, class: "waves-effect waves-light btn" %>
+      </td>
+      <% end %>
       </tr>
       </tbody>
         
