@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :tweets
   has_many :admins
   has_many :memos
+  has_many :comments
    
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

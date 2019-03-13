@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show, :edit, :update] 
   resources :admins, only: [:new, :create, :index]
-  resources :memos, only: [:new, :create, :index, :show, :destroy]
+  resources :memos, only: [:new, :create, :index, :show, :destroy] do
+    resources :comments, only: [:create]
+  end
   
 end

@@ -19,4 +19,39 @@
         
          <a class="btn" href="/memos">投稿一覧へ戻る</a>
          
+         
+         <!-- ここからフォーム -->
+    <% if current_user %>
+      <%= form_tag("/memos/#{@memo.id}/comments", method: :post) do %>
+      
+      <div class="row">
+        <div class="input-field col s12">
+          
+          
+          <textarea id="textarea1" class="materialize-textarea" name="text" type="text" placeholder="コメントする"></textarea>
+          
+          <input type="submit" value="sent" class="btn">
+          <% end %>
+          <% end %>
+         
          </div>
+         </div>
+         
+         <!--ここまで-->
+         
+         <!--コメント一覧-->
+         
+         <div class="comments">   
+      <h4>＜コメント一覧＞</h4>
+      <% if @comments %>
+        <% @comments.each do |comment| %>
+          <p>
+             <span><%= comment.user.name %></span>
+            <%= comment.text %>
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+    
+    <!--ここまで-->
+</div>
