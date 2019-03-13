@@ -1,0 +1,22 @@
+<div class="contents row">
+  
+        
+    <div class="memo_image">
+                <% if @memo.image.attached? %>
+                <%= image_tag @memo.image %>
+                
+          <% end %>
+          </div>
+          
+    <%= simple_format(@memo.title) %> 
+    <%= simple_format(@memo.text) %>
+    <br>
+    <span>投稿者 </span><%= @memo.user.name %>
+    
+    
+    
+    
+        
+         <a class="btn" href="/memos">投稿一覧へ戻る</a>
+         
+         </div>

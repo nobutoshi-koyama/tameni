@@ -4,9 +4,11 @@
       <td><%= admin.menu %></td>
       <td><%= admin.detail %></td>
       <td>
+        <div class="admin_image"></div>
           <% if admin.image.attached? %>
             <%= image_tag admin.image %>
           <% end %>
+          </div>
       </td>
       </tr>
       </tbody>

@@ -1,10 +1,13 @@
 class TweetsController < ApplicationController
     
     def index 
-        if user_signed_in?
-        # フラッシュメッセージ
-        flash.now[:notice] = "ようこそ。本日は#{Date.today}です。"
-    end
+        
+        
+        # ここ難しい。出荷規格のユーザーごとの表示
+         @users = User.all
+        @tweets = Tweet.where(user_id: params[:user_id]).page(params[:page]).per(10).order("created_at ASC")
+    
+        
     end
     
     def show

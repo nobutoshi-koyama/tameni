@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_one_attached :image
   has_many :tweets
   has_many :admins
+  has_many :memos
    
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

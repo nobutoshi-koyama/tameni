@@ -3,7 +3,7 @@ class AdminsController < ApplicationController
     end
     
     def create
-    Admin.create(menu: params_admin[:menu], detail: params_admin[:detail], user_id: current_user.id)
+    Admin.create(menu: params_admin[:menu], detail: params_admin[:detail], user_id: current_user.id, image: params_admin[:image])
 
     end
     
@@ -13,6 +13,6 @@ class AdminsController < ApplicationController
     
     private
     def params_admin
-        params.require(:admin).permit(:menu, :detail)
+        params.require(:admin).permit(:menu, :detail, :image)
     end
 end
