@@ -25,6 +25,7 @@ class MemosController < ApplicationController
     def show
       @memo = Memo.find(params[:id])
        @comments = @memo.comments.includes(:user)
+        @check = Check.new
   end
   
     def destroy

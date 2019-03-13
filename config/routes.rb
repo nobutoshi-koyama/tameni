@@ -12,6 +12,8 @@ Rails.application.routes.draw do
   resources :admins, only: [:new, :create, :index, :show, :edit, :update]
   resources :memos, only: [:new, :create, :index, :show, :destroy] do
     resources :comments, only: [:create]
+    resources :checks, only: [:create]
   end
+
   
 end

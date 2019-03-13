@@ -6,6 +6,11 @@ class User < ApplicationRecord
   has_many :admins
   has_many :memos
   has_many :comments
+  has_many :checks
+  
+  def already_checked?(memo)
+    self.checks.exists?(memo_id: memo.id)
+  end
    
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable

@@ -20,7 +20,17 @@
          <a class="btn" href="/memos">投稿一覧へ戻る</a>
          
          
-         <!-- ここからフォーム -->
+         <!--確認ボタン-->
+         <% unless current_user.already_checked?(@memo) %>
+         <%= button_to '見ました', memo_checks_path(@memo) %>
+         <% else %>
+         <a class="btn">確認済み</a>
+         <% end %>
+         
+         <!--ここまで-->
+         
+         
+         <!-- ここからcommentフォーム -->
     <% if current_user %>
       <%= form_tag("/memos/#{@memo.id}/comments", method: :post) do %>
       

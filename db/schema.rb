@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_074758) do
+ActiveRecord::Schema.define(version: 2019_03_13_123608) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -68,6 +68,15 @@ ActiveRecord::Schema.define(version: 2019_03_13_074758) do
     t.string "image"
   end
 
+  create_table "checks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "memo_id"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["memo_id"], name: "index_checks_on_memo_id"
+    t.index ["user_id"], name: "index_checks_on_user_id"
+  end
+
   create_table "comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -115,4 +124,6 @@ ActiveRecord::Schema.define(version: 2019_03_13_074758) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "checks", "memos"
+  add_foreign_key "checks", "users"
 end
