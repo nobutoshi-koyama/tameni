@@ -29,7 +29,10 @@
           <% end %>
       <div class="card-action">
          <%= link_to'詳細', "/memos/#{memo.id}",  class: "waves-effect waves-light btn" %>
+         
+         <% if current_user.id == 1 %>
          <%= link_to '削除', "/memos/#{memo.id}", method: :delete, class: "waves-effect waves-light btn", data: { confirm: '削除しますか？' } %>
+         <% end %>
     </div>
    
      

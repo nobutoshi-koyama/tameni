@@ -7,7 +7,13 @@ class MemosController < ApplicationController
         flash.now[:notice] = "ようこそ。本日は#{Date.today}です。"
         end
         
-        @memos = Memo.all
+        @memos = Memo.all.page(params[:page]).per(5).order("created_at DESC")
+        
+        
+        # topの表示はそのユーザーと管理者が投稿したもののみにしたい
+        # if current_user.id == 1
+        #     @memos = Memo.all
+        # end
     end
     
     def new
@@ -24,7 +30,7 @@ class MemosController < ApplicationController
   
     def destroy
          memo = Memo.find(params[:id])
-    memo.destroy if memo.user_id == 1
+    memo.destroy if current_user.id == 1
     end
 
     
