@@ -4,40 +4,15 @@
           <div class="card blue-grey darken-1">
             <div class="card-content white-text">
               
-              <span class="card-title"><%= user.name %>さんの出荷報告</span>
-              
-              <table>
-               <thead>
-                <tr>
-                  <th>品目</th>
-                  <th>数量(pc)/日</th>
-                  <th>出荷開始日</th>
-                  <th>出荷終了日</th>
-                </tr>
-               </thead>
-
-       <% @tweets.each do |tweet| %>
-              
-              
-   
-  
-  <tbody>
-    <tr>
-      <td><%= tweet.menu %></td>
-      <td><%= tweet.quantity %></td>
-      <td><%= tweet.start_year %>年<%= tweet.start_month %>月<%= tweet.start_day %></td>
-      <td><%= tweet.end_year %>年<%= tweet.end_month %>月<%= tweet.end_day %></td>
-     
-    </tr>
-  </tbody>
-  
-  
-<% end %>
-</table>
-        </div>
-        </div>
-        
-          
-        </div>
+             <p><%= user.name %></p>
+             <p><%= user.stage_title %></p>
+             <p><%= user.tel %></p>
+             <p><%= user.email %></p>
+             <p><%= user.address %></p>
+             <li><%= link_to "詳細", user_path(user.id), method: :get, class: "btn btn-primary withripple" %></li>
+             
+</div>
+</div>
+</div>
 </div>
       

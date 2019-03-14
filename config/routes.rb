@@ -8,7 +8,7 @@ Rails.application.routes.draw do
       get 'search'
     end
   end
-  resources :users, only: [:show, :edit, :update] 
+  resources :users, only: [:show, :edit, :update, :index] 
   resources :admins, only: [:new, :create, :index, :show, :edit, :update]
   resources :memos, only: [:new, :create, :index, :show, :destroy] do
     resources :comments, only: [:create]
