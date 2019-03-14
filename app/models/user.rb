@@ -9,6 +9,7 @@ class User < ApplicationRecord
   has_many :comments
   has_many :checks
   
+  
   def already_checked?(memo)
     self.checks.exists?(memo_id: memo.id)
   end

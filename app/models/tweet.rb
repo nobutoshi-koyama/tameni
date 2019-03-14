@@ -2,6 +2,7 @@ class Tweet < ApplicationRecord
     belongs_to :user
     
     
+    
     validates :menu, presence: true
     validates :quantity, presence: true
     validates :start_year, presence: true
