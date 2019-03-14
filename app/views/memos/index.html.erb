@@ -1,5 +1,9 @@
 <div class="content7">
      <% if user_signed_in? %>
+     
+    
+        
+        
        <% @memos.each do |memo| %>
          <%= render partial: "memo", locals: { memo: memo} %>
        <% end %>

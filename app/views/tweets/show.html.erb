@@ -1,14 +1,39 @@
-<div class="content1">
-  <% if user_signed_in? %>
-   <% @tweets.each do |tweet| %>
-      <%= render partial: "tweet", locals: { tweet: tweet} %>
-   <% end %>
-   
-   <%= paginate(@tweets) %>
-   
-    <% else %>
-    <p>ログインしてください</p>
-    <% end %>
-    
-    
+<div class="row form user_profole">
+    <!--<div class="blue darken-3">-->
+　　　　<% if @user.image.attached? %>
+        <div class="image" style="content: url(<%= rails_blob_path(@user.image) %>) "></div>
+        <% else %>
+        <%= form_for current_user do |f| %>
+         <h2>プロフィール画像</h2>
+        <div class="form-group file">
+        <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+      </div>
+        <% end %>
+        <% end %>
+       
+        <p>名前</p>
+        <h2><%= "#{@user.name}" %></h2>
+        <p>屋号</p>
+        <h2><%= "#{@user.stage_title}" %></h2>
+        <p>営農地（市町村）</p>
+        <h2><%= "#{@user.address}" %></h2>
+        <p>TEL</p>
+        <h2><%= "#{@user.tel}" %></h2>
+        <p>mail</p>
+        <h2><%= "#{@user.email}" %></h2>
 </div>
+        <div class="content1">
+            <p><%= @user.name %>さんの出荷予定(未確定)</p>
+             <table>
+        <thead>
+          <tr>
+              <th>品目</th>
+              <th>数量(pc)/日</th>
+              <th>出荷開始日</th>
+              <th>出荷終了日</th>
+          </tr>
+        </thead>
+  
+   <% @tweets.each do |tweet| %>
+      <%= render partial: "tweets/tweet", locals: { tweet: tweet} %>
+   <% end %>

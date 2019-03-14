@@ -3,12 +3,14 @@ class MemosController < ApplicationController
     
     def index
         
-        if user_signed_in?
-        # フラッシュメッセージ
-        flash.now[:notice] = "ようこそ。本日は#{Date.today}です。"
-        end
+        # if user_signed_in?
+        # # フラッシュメッセージ
+        # flash.now[:notice] = "ようこそ。本日は#{Date.today}です。"
+        # end
         
-        @memos = Memo.where(user_id: 1).page(params[:page]).per(5).order("created_at DESC")
+        
+        
+        @memos = Memo.all.page(params[:page]).per(5).order("created_at DESC")
         
         
         

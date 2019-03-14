@@ -51,11 +51,12 @@
        <ul class="right hide-on-med-and-down">
            <% if current_user.id == 1 %>
            <li><a href="/tweets">報告済み一覧（予定）</a></li>
+           <li><a href="/tweets/search">検索</a></li>
          <li><a href="/admins/new">出荷規格（投稿）</a></li>
          <% end %>
          <li><a href="/admins">出荷規格</a></li>
          <li><a href="/memos/new">お問い合わせ</a></li>
-         <li><a href="/tweets/search">検索</a></li>
+         
          
          <!-- Dropdown Trigger -->
          <li><a class="dropdown-button", data-activates="dropdown1">マイページ<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -81,6 +82,8 @@
       <% flash.each do |key, value| %>
       <%= content_tag(:div, value, class: "#{key}") %>
       <% end %>
+      
+      
    
     <%= yield %>
   </body>

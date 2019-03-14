@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_13_123608) do
+ActiveRecord::Schema.define(version: 2019_03_14_060615) do
 
   create_table "active_admin_comments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "namespace"
@@ -83,6 +83,13 @@ ActiveRecord::Schema.define(version: 2019_03_13_123608) do
     t.text "text"
     t.integer "memo_id"
     t.integer "user_id"
+  end
+
+  create_table "feed_contents", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.integer "content_id"
+    t.string "content_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

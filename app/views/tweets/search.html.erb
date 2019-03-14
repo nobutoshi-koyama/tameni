@@ -8,6 +8,7 @@
 
 <ul><% @tweets.each do |tweet| %>
   <li>
+    <%= tweet.user.name %>
     <%= link_to tweet.menu, tweet %>
     <%= tweet.created_at %>
    

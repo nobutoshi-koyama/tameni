@@ -2,18 +2,14 @@ class TweetsController < ApplicationController
     
     before_action :authenticate_user!, :except =>[:index]
     
-    def index 
+    def index
         
-        
-        # ここ難しい。出荷規格のユーザーごとの表示
-         @users = User.all
-        @tweets = Tweet.where(user_id: params[:user_id]).page(params[:page]).per(10).order("created_at ASC")
-    
         
     end
     
     # def show
-    #  @tweet = Tweet.where(user_id: current_user.id).page(params[:page]).per(5).order("created_at ASC")
+    #  @tweets = Tweet.find(params[:id])
+    #  @user = @tweets.user
     # end
     
     def new
