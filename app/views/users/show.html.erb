@@ -2,11 +2,15 @@
     <!--<div class="blue darken-3">-->
 　　　　<% if @user.image.attached? %>
         <div class="image" style="content: url(<%= rails_blob_path(@user.image) %>) "></div>
+        
         <% else %>
         <%= form_for current_user do |f| %>
          <h2>プロフィール画像</h2>
         <div class="form-group file">
         <%= f.file_field :image, class: "form-control floating-label", placeholder: "画像アップロード" %>
+      </div>
+      <div class="form-group">
+        <%= f.submit "送信", class: "btn btn-primary withripple" %>
       </div>
         <% end %>
         <% end %>
@@ -28,6 +32,7 @@
         <thead>
           <tr>
               <th>品目</th>
+              <th>品種</th>
               <th>数量(pc)/日</th>
               <th>出荷開始日</th>
               <th>出荷終了日</th>

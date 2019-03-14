@@ -4,9 +4,11 @@
   <tbody>
     <tr>
       <td><%= tweet.menu %></td>
+      <td><%= tweet.text %></td>
       <td><%= tweet.quantity %></td>
       <td><%= tweet.start_year %>年<%= tweet.start_month %>月<%= tweet.start_day %></td>
       <td><%= tweet.end_year %>年<%= tweet.end_month %>月<%= tweet.end_day %></td>
+      
       <td><%= link_to '削除', "/tweets/#{tweet.id}", method: :delete, class: "waves-effect waves-light btn", data: { confirm: '削除しますか？' } %></td>
       <td><%= link_to '編集', "/tweets/#{tweet.id}/edit", method: :get, class: "waves-effect waves-light btn" %></td>
     </tr>

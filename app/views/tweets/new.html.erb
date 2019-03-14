@@ -8,7 +8,10 @@
         <!--<div class="input-field col s12">-->
           
           <%= f.label :menu %>
-          <%= f.text_field :menu, placeholder:"品目"%>
+          <%= f.collection_select :menu, Tweet.all, :menu, :menu ,{prompt: ""}, {class: "browser-default"} %>
+          
+        　 <%= f.label :品種 %>
+          <%= f.text_field :text, placeholder: "例:紅芯大根" %>
           
           <%= f.label :quantity %>
           <%= f.text_field :quantity %>
@@ -30,6 +33,8 @@
           
           <%= f.label :end_day %>
           <%= f.select :end_day, options_for_select(["上旬", "中旬", "下旬"]), {include_blank: "選択してください"}, {class: "browser-default"} %>
+          
+         
           
           
           

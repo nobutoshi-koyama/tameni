@@ -1,0 +1,2 @@
+module SyukkasHelper
+end

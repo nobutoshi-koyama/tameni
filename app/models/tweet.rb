@@ -4,6 +4,7 @@ class Tweet < ApplicationRecord
     
     
     validates :menu, presence: true
+    validates :text, presence: true
     validates :quantity, presence: true
     validates :start_year, presence: true
     validates :start_month, presence: true
@@ -18,6 +19,8 @@ class Tweet < ApplicationRecord
       return Tweet.all unless search
       Tweet.where(['content LIKE ?', "%#{search}%"])
     end
+    
+    
     
     
 end

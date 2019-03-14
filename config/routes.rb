@@ -14,6 +14,8 @@ Rails.application.routes.draw do
     resources :comments, only: [:create]
     resources :checks, only: [:create]
   end
+  
+  resources :syukkas, only: [:new, :create, :index]
 
   
 end

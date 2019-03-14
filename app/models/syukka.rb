@@ -1,0 +1,2 @@
+class Syukka < ApplicationRecord
+end
