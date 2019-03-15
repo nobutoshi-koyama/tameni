@@ -29,6 +29,8 @@
           <% if current_user.id == 1 %>
             <%= link_to '削除', "/memos/#{memo.id}", method: :delete, class: "waves-effect waves-light btn", data: { confirm: '削除しますか？' } %>
           <% end %>
+          
+          
         </div>
    
        </div>

@@ -24,7 +24,7 @@
          <% unless current_user.already_checked?(@memo) %>
          <%= button_to '見ました', memo_checks_path(@memo) %>
          <% else %>
-         <a class="btn">確認済み</a>
+         <a class="btn col red">確認済み</a>
          <% end %>
          
          <!--ここまで-->
