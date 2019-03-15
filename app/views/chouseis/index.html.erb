@@ -3,5 +3,7 @@
     <% @chouseis.each do |chousei| %>
      <p><%= chousei.day %></p>
      <%= link_to'詳細', "/chouseis/#{chousei.id}",  class: "waves-effect waves-light btn" %>
+     
+     
      <% end %>
 </div>

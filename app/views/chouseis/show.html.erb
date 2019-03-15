@@ -12,6 +12,7 @@
              <span><%= syukka.menu %></span>
              <span><%= syukka.detail %></span>
              <span><%= syukka.quantity %></span>
+             
            
           </p>
         <% end %>
@@ -19,7 +20,7 @@
     </div>
       
           
-        
+        <%= link_to'編集', "/chouseis/#{@chousei.id}/edit", method: :get, class: "waves-effect waves-light btn" %>
          <%= link_to'納品表依頼一覧', "/chouseis",  class: "waves-effect waves-light btn" %>
       
         

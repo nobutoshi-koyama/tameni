@@ -1,6 +1,18 @@
 <div class="users">
+    
+    <table>
+        <thead>
+          <tr>
+              <th>生産者</th>
+              <th>屋号</th>
+              <th>tel</th>
+              <th>mail</th>
+              <th>営農地</th>
+              
+          </tr>
+        </thead>
     <% @users.each do |user| %>
       <%= render partial: "users/index", locals: { user: user} %>
    <% end %>
-   
+   </table>
 </div>

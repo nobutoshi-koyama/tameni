@@ -19,7 +19,10 @@
       <%= syukka_form.label :数量 %>
       <%= syukka_form.text_field :quantity %><br />
       
-      
+      <% if @chousei.persisted? %>
+        <%= syukka_form.check_box :_destroy %>
+        <%= syukka_form.label :_destroy, "削除" %><br />
+      <% end %>
     <% end %>
   </div>
 

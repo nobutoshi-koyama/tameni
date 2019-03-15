@@ -7,7 +7,7 @@ class TweetsController < ApplicationController
         @users = User.all
         
         
-        @tweets = Tweet.all
+        @tweets = Tweet.order("user_id ASC")
     end
     
     # def show
