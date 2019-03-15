@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   end
   
   resources :syukkas, only: [:new, :create, :index]
+  resources :chouseis, only: [:new, :create, :index]
 
   
 end

@@ -1,0 +1,29 @@
+<div class="content8">
+    
+<%= form_for @chousei do |f| %>
+
+<div class="field">
+    <%= f.label :納品日 %><br>
+    <%= f.text_field :day %>
+    
+  </div>
+  <div class="field">
+    <%= f.label :納品依頼 %><br />
+    <%= f.fields_for :syukkas do |syukka_form| %>
+      <%= syukka_form.label :生産者 %>
+      <%= syukka_form.text_field :farmer %><br />
+      <%= syukka_form.label :品目 %>
+      <%= syukka_form.text_field :menu %><br />
+      <%= syukka_form.label :品種 %>
+      <%= syukka_form.text_field :detail %><br />
+      <%= syukka_form.label :数量 %>
+      <%= syukka_form.text_field :quantity %><br />
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+</div>

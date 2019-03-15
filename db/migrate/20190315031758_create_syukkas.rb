@@ -2,12 +2,9 @@ class CreateSyukkas < ActiveRecord::Migration[5.2]
   def change
     create_table :syukkas do |t|
       
-      t.integer :user_id
-      t.integer :year
-      t.integer :month
-      t.integer :day
-      t.string :menu
+      t.integer :chousei_id
       t.integer :quantity
+      t.string :menu
       t.text :detail
       t.text :farmer
 
