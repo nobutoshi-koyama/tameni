@@ -15,8 +15,9 @@ Rails.application.routes.draw do
     resources :checks, only: [:create]
   end
   
-  resources :syukkas, only: [:new, :create, :index]
-  resources :chouseis, only: [:new, :create, :index]
-
+  
+  resources :chouseis, only: [:new, :create, :index, :show] do
+   resources :syukkas, only: [:new, :create, :index]
+ end
   
 end

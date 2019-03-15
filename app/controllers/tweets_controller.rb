@@ -6,7 +6,8 @@ class TweetsController < ApplicationController
         
         @users = User.all
         
-        @tweets = Tweet.where(user_id: current_user.id)
+        
+        @tweets = Tweet.all
     end
     
     # def show

@@ -3,13 +3,17 @@ class ChouseisController < ApplicationController
     def index
         @chouseis = Chousei.all
 end
+
+    def show
+    @chousei = Chousei.find(params[:id])
+    @syukkas = @chousei.syukkas
+end
     
     def new
     @chousei = Chousei.new
     
     
-    # 5.times 
-    @chousei.syukkas.build
+    2.times {@chousei.syukkas.build}
     
     
     

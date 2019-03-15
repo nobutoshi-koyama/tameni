@@ -1,0 +1,26 @@
+<div class="content_admin">
+     
+    
+      <%= @chousei.day %>
+      
+      <div class="comments">   
+      <h4>＜納品一覧＞</h4>
+      <% if @syukkas %>
+        <% @syukkas.each do |syukka| %>
+          <p>
+             <span><%= syukka.farmer %></span>
+             <span><%= syukka.menu %></span>
+             <span><%= syukka.detail %></span>
+             <span><%= syukka.quantity %></span>
+           
+          </p>
+        <% end %>
+      <% end %>
+    </div>
+      
+          
+        
+         <%= link_to'納品表依頼一覧', "/chouseis",  class: "waves-effect waves-light btn" %>
+      
+        
+</div>

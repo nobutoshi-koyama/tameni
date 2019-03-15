@@ -1,27 +1,21 @@
  
              
    <div class="content1">
-    
-    <% @users.each do |user| %>
-            <p><%= user.name %>さんの出荷予定(未確定)</p>
-             <table>
+       <table>
         <thead>
           <tr>
+              <th>生産者</th>
               <th>品目</th>
-              <th>数量(pc)/日</th>
-              <th>出荷開始日</th>
-              <th>出荷終了日</th>
+              <th>品種</th>
+              <th>数量</th>
+              <th>開始日</th>
+              
           </tr>
         </thead>
-  
-   <% @tweets.each do |tweet| %>
-      <%= render partial: "tweets/tweet", locals: { tweet: tweet} %>
+    <% @tweets.each do |tweet| %>
+   <%= render partial: "tweets/index", locals: { tweet: tweet} %>
    <% end %>
    
-  
-   
-    
-    </table>
-    <% end %>
+   </table>
 </div>
    
