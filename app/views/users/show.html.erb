@@ -17,32 +17,5 @@
         <p>mail</p>
         <h2><%= "#{@user.email}" %></h2>
 </div>
-        <div class="content1">
-            <p><%= @user.name %>さんの出荷予定(未確定)</p>
-            
-            <div class="row">
-  
-           
-           
-            
-  
-  <% @dayoftweets.each do |dayoftweet| %>
-  
-  <p><%= dayoftweet.year %>年<%= dayoftweet.day %>月</p>
-  
-  
-<%= render partial: "dayoftweets/index", locals: { dayoftweet: dayoftweet} %>
-
-
-<% end %>
-   
-  
-   
-    
-    </table>
-    
-</div>
-</div>
-
-
+        <%= link_to'編集', "/users/#{@user.id}/edit", method: :get, class: "waves-effect waves-light btn" %>
     

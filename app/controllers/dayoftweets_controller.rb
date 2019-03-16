@@ -1,7 +1,7 @@
 class DayoftweetsController < ApplicationController
     
     def index
-        @dayoftweets = Dayoftweet.all
+        @dayoftweets = Dayoftweet.where(user_id: current_user.id)
     end
     
     def new
@@ -20,7 +20,8 @@ class DayoftweetsController < ApplicationController
  
  private
     def dayoftweet_params
-         params.require(:dayoftweet).permit(:day, :year)
+         params.require(:dayoftweet).permit(:day, :year).merge(user_id: current_user.id)
+  end
              
-         end
+        
 end

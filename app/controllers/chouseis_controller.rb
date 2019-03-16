@@ -13,7 +13,7 @@ end
     @chousei = Chousei.new
     
     
-    2.times {@chousei.syukkas.build}
+    5.times {@chousei.syukkas.build}
     
     end
     
