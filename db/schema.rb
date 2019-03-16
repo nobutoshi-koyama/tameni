@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_15_110819) do
+ActiveRecord::Schema.define(version: 2019_03_16_092015) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -65,6 +65,13 @@ ActiveRecord::Schema.define(version: 2019_03_15_110819) do
     t.integer "user_id"
   end
 
+  create_table "dayoftweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "day"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "year"
+  end
+
   create_table "memos", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.text "title"
     t.text "text"
@@ -84,18 +91,16 @@ ActiveRecord::Schema.define(version: 2019_03_15_110819) do
   end
 
   create_table "tweets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "start_year"
-    t.integer "end_year"
-    t.integer "start_month"
-    t.integer "end_month"
-    t.string "start_day"
-    t.string "end_day"
-    t.integer "quantity"
+    t.integer "user_id"
     t.string "menu"
+    t.text "text"
+    t.integer "quantity"
+    t.string "start_day"
+    t.integer "end_month"
+    t.string "end_day"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.text "text"
+    t.integer "dayoftweet_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|

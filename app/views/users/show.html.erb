@@ -19,20 +19,22 @@
 </div>
         <div class="content1">
             <p><%= @user.name %>さんの出荷予定(未確定)</p>
-             <table>
-        <thead>
-          <tr>
-              <th>品目</th>
-              <th>品種</th>
-              <th>数量(pc)/日</th>
-              <th>出荷開始日</th>
-              <th>出荷終了日</th>
-          </tr>
-        </thead>
+            
+            <div class="row">
   
-   <% @tweets.each do |tweet| %>
-      <%= render partial: "tweets/tweet", locals: { tweet: tweet} %>
-   <% end %>
+           
+           
+            
+  
+  <% @dayoftweets.each do |dayoftweet| %>
+  
+  <p><%= dayoftweet.year %>年<%= dayoftweet.day %>月</p>
+  
+  
+<%= render partial: "dayoftweets/index", locals: { dayoftweet: dayoftweet} %>
+
+
+<% end %>
    
   
    
@@ -40,5 +42,7 @@
     </table>
     
 </div>
-         <%= paginate(@tweets) %>
+</div>
+
+
     

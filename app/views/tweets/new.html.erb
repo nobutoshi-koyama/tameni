@@ -1,6 +1,6 @@
 <div class="content5">
   
-  <% @tweet = Tweet.new unless @tweet %>
+  
   <%= form_for(@tweet) do |f| %>
   
     
@@ -8,27 +8,21 @@
         <!--<div class="input-field col s12">-->
           
           <%= f.label :menu %>
-          <%= f.text_field :text, placeholder: "例:紅芯大根" %>
+          <%= f.text_field :menu, placeholder: "例:紅芯大根" %>
           
           
         　 <%= f.label :品種 %>
-        　 <%= f.collection_select :menu, Tweet.all, :text, :text ,{prompt: ""}, {class: "browser-default"} %>
+        　 <%= f.text_field :text %>
           
           
           <%= f.label :quantity %>
           <%= f.text_field :quantity %>
           
-          <%= f.label :start_year %>
-          <%= f.select :start_year, options_for_select(2019..2024), {include_blank: "選択してください"}, {class: "browser-default"} %>
           
-          <%= f.label :start_month %>
-          <%= f.select :start_month, options_for_select(1..12), {include_blank: "選択してください"}, {class: "browser-default"} %>
           
           <%= f.label :start_day %>
           <%= f.select :start_day, options_for_select(["上旬", "中旬", "下旬"]), {include_blank: "選択してください"}, {class: "browser-default"} %>
           
-          <%= f.label :end_year %>
-          <%= f.select :end_year, options_for_select(2019..2024), {include_blank: "選択してください"}, {class: "browser-default"} %>
           
           <%= f.label :end_month %>
           <%= f.select :end_month, options_for_select(1..12), {include_blank: "選択してください"}, {class: "browser-default"} %>
@@ -36,7 +30,7 @@
           <%= f.label :end_day %>
           <%= f.select :end_day, options_for_select(["上旬", "中旬", "下旬"]), {include_blank: "選択してください"}, {class: "browser-default"} %>
           
-         
+         <%= f.hidden_field :dayoftweet_id %>
           
           
           

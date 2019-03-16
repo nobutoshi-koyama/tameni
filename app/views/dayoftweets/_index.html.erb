@@ -1,0 +1,51 @@
+
+    
+   
+<table>
+    <hr>
+     <p><%= dayoftweet.year %>年<%= dayoftweet.day %>月</p>
+        <thead>
+          <tr>
+              <th>品目</th>
+              <th>品種</th>
+              <th>数量</th>
+              <th>開始</th>
+              <th>終了</th>
+              <th><div class="form_btn">
+　　　　　　　　　　<%= form_tag(new_tweet_path, method: :get, class: "dayoftweet_submit") do %>
+  　　　　　　　　　　　　　　　　    <%= hidden_field_tag(:dayoftweet_id, dayoftweet.id) %>
+　　　　　　　　　　　　<%= submit_tag("品目を追加する") %>
+   　　　　　　　　　　　　　　 <% end %>
+    　　　　　　　　　　　</div>
+　　　　　　　</th>
+              
+              
+          </tr>
+        </thead>
+<tbody>
+<% dayoftweet.tweets.each do |tweet| %>
+       
+       <tbody>
+       <td><%= tweet.menu %></td>
+        <td><%= tweet.text %></td>
+        <td><%= tweet.quantity %></td>
+        <td><%= tweet.start_day %></td>
+        <td><%= tweet.end_month %>月<%= tweet.end_day %>日</td>
+        
+         
+          
+           
+           </tbody>
+            
+               
+       
+<% end %>
+
+
+
+
+</tbody>
+
+
+
+

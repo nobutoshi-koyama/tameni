@@ -4,11 +4,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   root 'memos#index'
-  resources :tweets, only: [:new, :create, :destroy, :edit, :update, :index] do
-    collection do
-      get 'search'
-    end
-  end
+  resources :tweets, only: [:new, :create, :destroy, :edit, :update, :index] 
   resources :users, only: [:show, :edit, :update, :index] 
   resources :admins, only: [:new, :create, :index, :show, :edit, :update]
   resources :memos, only: [:new, :create, :index, :show, :destroy] do
@@ -18,7 +14,7 @@ Rails.application.routes.draw do
   
   
   resources :chouseis, only: [:new, :create, :index, :show, :edit, :update] 
-   resources :syukkas, only: [:new, :create, :index]
+  resources :dayoftweets, only: [:new, :create, :index]
  
   
 end

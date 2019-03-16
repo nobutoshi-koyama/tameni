@@ -1,0 +1,9 @@
+
+<p><%= current_user.name %>さんの出荷可能品目</p>
+<% @dayoftweets.each do |dayoftweet| %>
+
+
+<%= render partial: "dayoftweets/index", locals: { dayoftweet: dayoftweet} %>
+
+
+<% end %>
