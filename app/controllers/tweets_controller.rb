@@ -7,10 +7,7 @@ class TweetsController < ApplicationController
         
     end
     
-    # def show
-    #  @tweets = Tweet.find(params[:id])
-    #  @user = @tweets.user
-    # end
+    
     
      def new
          @dayoftweet = Dayoftweet.find(params[:dayoftweet_id])
@@ -20,6 +17,8 @@ end
    
     def create
       Tweet.create( menu: tweet_params[:menu], text: tweet_params[:text], quantity: tweet_params[:quantity], start_day: tweet_params[:start_day], end_month: tweet_params[:end_month], end_day: tweet_params[:end_day], dayoftweet_id: tweet_params[:dayoftweet_id], user_id: current_user.id)
+  
+      
   end
     
     

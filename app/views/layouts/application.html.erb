@@ -52,14 +52,15 @@
        <a href="/" class="brand-logo">tameni</a>
        <ul class="right hide-on-med-and-down">
            <% if current_user.id == 1 %>
+           <li><a href="/chouseis/new">集荷表作成</a></li>
            <li><a href="/users">生産者一覧</a></li>
-           <li><a href="/tweets">報告済み一覧（予定）</a></li>
+           <li><a href="/tweets">生産者出荷可能一覧</a></li>
            <!--<li><a href="/tweets/search">検索</a></li>-->
          <li><a href="/admins/new">出荷規格（投稿）</a></li>
-         <li><a href="/chouseis/new">集荷表作成</a></li>
+         
          <% end %>
          <li><a href="/admins">出荷規格</a></li>
-         <li><a href="/memos/new">お問い合わせ</a></li>
+         <li><a href="/memos/new">連絡</a></li>
          
          
          <!-- Dropdown Trigger -->
