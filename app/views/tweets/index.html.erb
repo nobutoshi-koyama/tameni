@@ -1,21 +1,13 @@
  
              
    <div class="content1">
-       <table>
-        <thead>
-          <tr>
-              <th>生産者</th>
-              <th>品目</th>
-              <th>品種</th>
-              <th>数量</th>
-              <th>開始日</th>
-              
-          </tr>
-        </thead>
-    <% @tweets.each do |tweet| %>
-   <%= render partial: "tweets/index", locals: { tweet: tweet} %>
+       
+       <% @users.each do |user| %>
+       <%= user.name %>
+      <%= render partial: "tweets/index", locals: { user: user} %>
    <% end %>
+       
+       
    
-   </table>
 </div>
    

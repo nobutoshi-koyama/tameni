@@ -3,11 +3,12 @@ class TweetsController < ApplicationController
     before_action :authenticate_user!, :except =>[:index]
     
     def index
+        @users = User.joins(:tweets).includes(:tweets)
         
-        @users = User.all
         
         
-        @tweets = Tweet.order("user_id ASC")
+        
+        
     end
     
     # def show

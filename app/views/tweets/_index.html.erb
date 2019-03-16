@@ -1,18 +1,6 @@
 
-  <tbody>
-      <tr>
-    
-    
-    <!--これ大事-->
-    <td><%= link_to tweet.user.name, user_path(tweet.user) %></td>
-    
-    <td><%= tweet.menu %></td>
-    <td><%= tweet.text %></td>
-    <td><%= tweet.quantity %></td>
-    <td><%= tweet.start_year %>年<%= tweet.start_month %></td> 
-    </tr>
-    </tbody>
+       <% user.tweets.each do |tweet| %>
+       <p><%= tweet.menu %></p>
+       
+<% end %>
    
-  
-  
- 

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  
   devise_for :users
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
@@ -16,8 +17,8 @@ Rails.application.routes.draw do
   end
   
   
-  resources :chouseis, only: [:new, :create, :index, :show, :edit, :update] do
+  resources :chouseis, only: [:new, :create, :index, :show, :edit, :update] 
    resources :syukkas, only: [:new, :create, :index]
- end
+ 
   
 end

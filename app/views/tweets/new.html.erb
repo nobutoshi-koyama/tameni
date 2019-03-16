@@ -8,10 +8,12 @@
         <!--<div class="input-field col s12">-->
           
           <%= f.label :menu %>
-          <%= f.collection_select :menu, Tweet.all, :menu, :menu ,{prompt: ""}, {class: "browser-default"} %>
+          <%= f.text_field :text, placeholder: "例:紅芯大根" %>
+          
           
         　 <%= f.label :品種 %>
-          <%= f.text_field :text, placeholder: "例:紅芯大根" %>
+        　 <%= f.collection_select :menu, Tweet.all, :text, :text ,{prompt: ""}, {class: "browser-default"} %>
+          
           
           <%= f.label :quantity %>
           <%= f.text_field :quantity %>
